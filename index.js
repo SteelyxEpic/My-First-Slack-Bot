@@ -63,13 +63,10 @@ app.command("/tyo-dad-joke", async ({ ack, respond }) => {
   }
 });
 
-app.message(/epic/i, async ({ message, say }) => {
-  await say("Epic indeed!");
-});
 
 app.command("/tyo-feedback", async ({ command, ack, respond }) => {
   await ack();
-  await respond({ text: "Please provide your feedback below:" });
+  await respond({ text: "Please provide your feedback below:" + command.text });
 });
 
 (async () => {
