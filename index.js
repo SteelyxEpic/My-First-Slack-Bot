@@ -26,6 +26,7 @@ app.command("/tyo-help", async ({ ack, respond }) => {
 /tyo-joke - Get a random joke
 /tyo-dad-joke - Get a random dad joke
 /tyo-feedback - Send feedback to the bot developer
+/tyo-echo - Echo back your message
 `  });
 });
 
@@ -66,7 +67,12 @@ app.command("/tyo-dad-joke", async ({ ack, respond }) => {
 
 app.command("/tyo-feedback", async ({ command, ack, respond }) => {
   await ack();
-  await respond({ text: "Please provide your feedback below:" + command.text });
+  await respond({ text: "Your feedback: " + command.text + "\nThank you for your feedback! It has been sent to the bot developer." });
+  console.log("New feedback received: " + command.text);
+});
+app.command("/tyo-echo", async ({ command, ack, respond }) => {
+  await ack();
+  await respond({ text: command.text });
 });
 
 (async () => {
