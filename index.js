@@ -25,6 +25,7 @@ app.command("/tyo-help", async ({ ack, respond }) => {
 /tyo-help - Show available commands
 /tyo-joke - Get a random joke
 /tyo-dad-joke - Get a random dad joke
+/tyo-feedback - Send feedback to the bot developer
 `  });
 });
 
